@@ -237,8 +237,7 @@ describe('App e2e', () => {
         .withHeaders({
           Authorization: 'Bearer $S{userAt}',
         })
-        .expectStatus(204)
-        .inspect();
+        .expectStatus(204);
     });
 
     it('Should get empty bookmarks', () => {

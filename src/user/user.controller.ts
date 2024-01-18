@@ -14,6 +14,11 @@ export class UserController {
     return user;
   }
 
+  @Get('me_and_my_bookmarks')
+  getMeAndMyBookmarks(@GetUser('id') userId: number) {
+    return this.userService.findUserWithBookmarks(userId);
+  }
+
   @Patch()
   editUser(@GetUser('id') userId: number, @Body() dto: EditUserDto) {
     return this.userService.editUser(userId, dto);
